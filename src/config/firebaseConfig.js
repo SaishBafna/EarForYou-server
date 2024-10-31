@@ -1,9 +1,7 @@
-// services/firebaseService.js
 import admin from 'firebase-admin';
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
 
-const serviceAccount = require('./serviceAccountKey.json');
+// Parse the service account key from the environment variable
+const serviceAccount = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT);
 
 // Initialize Firebase Admin SDK
 admin.initializeApp({
