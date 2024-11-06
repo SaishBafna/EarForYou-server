@@ -1,11 +1,9 @@
-// services/firebaseService.js
 import admin from 'firebase-admin';
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
+import dotenv from 'dotenv';
+dotenv.config();
 
-
-const serviceAccount = require('../../serviceAccountKey.json');
-
+// Parse the service account JSON from environment variable
+const serviceAccount = JSON.parse(process.env.serviceAccount);
 
 // Initialize Firebase Admin SDK
 admin.initializeApp({
