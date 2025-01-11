@@ -34,13 +34,13 @@ export const deductPerMinute = async (req, res) => {
     }
 
     // Check if the caller has sufficient balance
-    if (callerWallet.balance < totalDeduction) {
-      await session.abortTransaction();
-      return res.status(400).json({
-        success: false,
-        message: 'Insufficient balance for the call',
-      });
-    }
+    // if (callerWallet.balance < totalDeduction) {
+    //   await session.abortTransaction();
+    //   return res.status(400).json({
+    //     success: false,
+    //     message: 'Insufficient balance for the call',
+    //   });
+    // }
 
     // Generate a unique transaction ID
     const transactionId = uuidv4();
